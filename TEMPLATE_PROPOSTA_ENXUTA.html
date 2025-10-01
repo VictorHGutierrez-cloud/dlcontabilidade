@@ -1,0 +1,446 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposta {{CLIENT_NAME}} - Factorial</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: 'Fira Sans', sans-serif;
+            color: #25253D;
+            background: #f5f5f5;
+        }
+        
+        /* SISTEMA DE SLIDES - 1 slide = 1 viewport */
+        .slide {
+            min-height: 100vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+            padding: 60px 40px;
+            page-break-after: always;
+        }
+        
+        .container {
+            max-width: 1000px;
+            margin: 0 auto;
+            width: 100%;
+        }
+        
+        /* SLIDE 1: CAPA */
+        .slide-capa {
+            background: linear-gradient(135deg, #07A2AD, #25253D);
+            color: white;
+            text-align: center;
+        }
+        
+        .slide-capa h1 {
+            font-size: 3em;
+            margin-bottom: 20px;
+            font-weight: 700;
+        }
+        
+        .slide-capa .subtitle {
+            font-size: 1.5em;
+            margin-bottom: 40px;
+            opacity: 0.9;
+        }
+        
+        .slide-capa .meta {
+            font-size: 1.1em;
+            opacity: 0.8;
+        }
+        
+        /* SLIDE 2-8: CONTEÚDO */
+        .slide-content {
+            background: white;
+        }
+        
+        h2 {
+            font-size: 2em;
+            color: #07A2AD;
+            margin-bottom: 30px;
+            border-left: 5px solid #07A2AD;
+            padding-left: 20px;
+        }
+        
+        /* BULLETS - máximo 6 */
+        .bullet-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .bullet-list li {
+            font-size: 1.3em;
+            line-height: 1.8;
+            padding: 15px 0;
+            border-bottom: 1px solid #eee;
+            display: flex;
+            align-items: flex-start;
+        }
+        
+        .bullet-list li:last-child {
+            border-bottom: none;
+        }
+        
+        .bullet-list .icon {
+            font-size: 1.5em;
+            margin-right: 15px;
+            min-width: 35px;
+        }
+        
+        /* TABELA ANTES/DEPOIS - 6 linhas */
+        .comparison-table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        
+        .comparison-table th {
+            background: #25253D;
+            color: white;
+            padding: 15px;
+            font-size: 1.2em;
+            text-align: left;
+        }
+        
+        .comparison-table td {
+            padding: 15px;
+            font-size: 1.1em;
+            border-bottom: 1px solid #eee;
+        }
+        
+        .comparison-table .before {
+            background: #FFE5E9;
+            color: #FF355E;
+        }
+        
+        .comparison-table .after {
+            background: #E0F7F8;
+            color: #07A2AD;
+        }
+        
+        /* FLUXO - 6 passos */
+        .flow-steps {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 20px;
+            margin-top: 30px;
+        }
+        
+        .flow-step {
+            text-align: center;
+            padding: 20px;
+            background: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .flow-step .number {
+            font-size: 2em;
+            font-weight: 700;
+            color: #07A2AD;
+            margin-bottom: 10px;
+        }
+        
+        .flow-step .label {
+            font-size: 1.1em;
+            font-weight: 600;
+        }
+        
+        /* INVESTIMENTO */
+        .pricing-box {
+            background: linear-gradient(135deg, #07A2AD, #25253D);
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+        }
+        
+        .pricing-box .price {
+            font-size: 3em;
+            font-weight: 700;
+            margin: 20px 0;
+        }
+        
+        .pricing-box .detail {
+            font-size: 1.2em;
+            opacity: 0.9;
+            margin: 10px 0;
+        }
+        
+        .roi-highlight {
+            background: #FFB940;
+            color: #25253D;
+            padding: 20px;
+            border-radius: 10px;
+            margin-top: 20px;
+            font-size: 1.3em;
+            font-weight: 600;
+        }
+        
+        /* IMPLEMENTAÇÃO - checklist 5 itens */
+        .checklist {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .checklist li {
+            font-size: 1.3em;
+            padding: 15px;
+            margin: 10px 0;
+            background: #E0F7F8;
+            border-left: 5px solid #07A2AD;
+            border-radius: 5px;
+        }
+        
+        .checklist li::before {
+            content: "✓";
+            color: #07A2AD;
+            font-weight: 700;
+            margin-right: 15px;
+            font-size: 1.3em;
+        }
+        
+        /* CTA */
+        .quote-box {
+            background: #FFF4E6;
+            border-left: 5px solid #FFB940;
+            padding: 30px;
+            margin: 30px 0;
+            font-size: 1.3em;
+            font-style: italic;
+            color: #25253D;
+        }
+        
+        .cta-box {
+            background: #FF9153;
+            color: white;
+            padding: 40px;
+            border-radius: 15px;
+            text-align: center;
+            margin-top: 30px;
+        }
+        
+        .cta-box h3 {
+            font-size: 2em;
+            margin-bottom: 20px;
+        }
+        
+        .cta-box .action {
+            font-size: 1.3em;
+            margin: 15px 0;
+        }
+        
+        /* RESPONSIVO */
+        @media (max-width: 768px) {
+            .slide {
+                padding: 40px 20px;
+            }
+            
+            .slide-capa h1 {
+                font-size: 2em;
+            }
+            
+            h2 {
+                font-size: 1.5em;
+            }
+            
+            .bullet-list li {
+                font-size: 1.1em;
+            }
+            
+            .flow-steps {
+                grid-template-columns: repeat(2, 1fr);
+            }
+            
+            .pricing-box .price {
+                font-size: 2em;
+            }
+        }
+        
+        /* PRINT */
+        @media print {
+            .slide {
+                page-break-after: always;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- SLIDE 1: CAPA -->
+    <section class="slide slide-capa">
+        <div class="container">
+            <h1>{{CLIENT_NAME}}</h1>
+            <p class="subtitle">{{TITULO_CURTO}}</p>
+            <div class="meta">
+                <p>{{DATE}}</p>
+                <p>Victor Gutierrez | Factorial</p>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 2: DOR (EXATOS 5 BULLETS) -->
+    <section class="slide slide-content">
+        <div class="container">
+            <h2>❌ Situação Atual</h2>
+            <ul class="bullet-list">
+                <li><span class="icon">❌</span> <span>{{DOR_1}}</span></li>
+                <li><span class="icon">❌</span> <span>{{DOR_2}}</span></li>
+                <li><span class="icon">❌</span> <span>{{DOR_3}}</span></li>
+                <li><span class="icon">❌</span> <span>{{DOR_4}}</span></li>
+                <li><span class="icon">❌</span> <span>{{DOR_5}}</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- SLIDE 3: SOLUÇÃO (5-6 BULLETS) -->
+    <section class="slide slide-content">
+        <div class="container">
+            <h2>✅ Solução Factorial</h2>
+            <ul class="bullet-list">
+                <li><span class="icon">✅</span> <span>{{SOLUCAO_1}}</span></li>
+                <li><span class="icon">✅</span> <span>{{SOLUCAO_2}}</span></li>
+                <li><span class="icon">✅</span> <span>{{SOLUCAO_3}}</span></li>
+                <li><span class="icon">✅</span> <span>{{SOLUCAO_4}}</span></li>
+                <li><span class="icon">✅</span> <span>{{SOLUCAO_5}}</span></li>
+                <li><span class="icon">✅</span> <span>{{SOLUCAO_6}}</span></li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- SLIDE 4: FLUXO (6 PASSOS) -->
+    <section class="slide slide-content">
+        <div class="container">
+            <h2>🔄 Como Funciona</h2>
+            <div class="flow-steps">
+                <div class="flow-step">
+                    <div class="number">1</div>
+                    <div class="label">{{PASSO_1}}</div>
+                </div>
+                <div class="flow-step">
+                    <div class="number">2</div>
+                    <div class="label">{{PASSO_2}}</div>
+                </div>
+                <div class="flow-step">
+                    <div class="number">3</div>
+                    <div class="label">{{PASSO_3}}</div>
+                </div>
+                <div class="flow-step">
+                    <div class="number">4</div>
+                    <div class="label">{{PASSO_4}}</div>
+                </div>
+                <div class="flow-step">
+                    <div class="number">5</div>
+                    <div class="label">{{PASSO_5}}</div>
+                </div>
+                <div class="flow-step">
+                    <div class="number">6</div>
+                    <div class="label">{{PASSO_6}}</div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 5: ANTES vs DEPOIS (6 LINHAS) -->
+    <section class="slide slide-content">
+        <div class="container">
+            <h2>📊 Antes vs Depois</h2>
+            <table class="comparison-table">
+                <thead>
+                    <tr>
+                        <th>Processo</th>
+                        <th>Antes</th>
+                        <th>Depois</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td><strong>Upload</strong></td>
+                        <td class="before">{{ANTES_UPLOAD}}</td>
+                        <td class="after">{{DEPOIS_UPLOAD}}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Assinatura</strong></td>
+                        <td class="before">{{ANTES_ASSINATURA}}</td>
+                        <td class="after">{{DEPOIS_ASSINATURA}}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Notificação</strong></td>
+                        <td class="before">{{ANTES_NOTIFICACAO}}</td>
+                        <td class="after">{{DEPOIS_NOTIFICACAO}}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Dependência</strong></td>
+                        <td class="before">{{ANTES_DEPENDENCIA}}</td>
+                        <td class="after">{{DEPOIS_DEPENDENCIA}}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Controle</strong></td>
+                        <td class="before">{{ANTES_CONTROLE}}</td>
+                        <td class="after">{{DEPOIS_CONTROLE}}</td>
+                    </tr>
+                    <tr>
+                        <td><strong>Validade Jurídica</strong></td>
+                        <td class="before">{{ANTES_JURIDICA}}</td>
+                        <td class="after">{{DEPOIS_JURIDICA}}</td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+    </section>
+
+    <!-- SLIDE 6: INVESTIMENTO + ROI -->
+    <section class="slide slide-content">
+        <div class="container">
+            <h2>💰 Investimento</h2>
+            <div class="pricing-box">
+                <div class="detail">R$ {{PRICE_PER_USER}}/colaborador/mês</div>
+                <div class="price">R$ {{TOTAL_PRICE}}/mês</div>
+                <div class="detail">{{NUM_COLAB}} colaboradores</div>
+            </div>
+            <div class="roi-highlight">
+                💡 Economia: {{HOURS_SAVED}h/mês | ROI: {{ROI_PERCENT}}%
+            </div>
+        </div>
+    </section>
+
+    <!-- SLIDE 7: IMPLEMENTAÇÃO (5 ITENS) -->
+    <section class="slide slide-content">
+        <div class="container">
+            <h2>🚀 Implementação</h2>
+            <ul class="checklist">
+                <li>Cadastro de colaboradores</li>
+                <li>Configuração de filiais</li>
+                <li>Criação de pastas</li>
+                <li>Treinamento da equipe</li>
+                <li>Go-live completo</li>
+            </ul>
+        </div>
+    </section>
+
+    <!-- SLIDE 8: CTA + PROVA SOCIAL -->
+    <section class="slide slide-content">
+        <div class="container">
+            <h2>✨ Próximo Passo</h2>
+            <div class="quote-box">
+                "{{QUOTE_CLIENTE}}"
+            </div>
+            <div class="cta-box">
+                <h3>Vamos começar?</h3>
+                <p class="action">📅 {{NEXT_STEPS_DATE}}</p>
+                <p class="action">📧 Victor Gutierrez | {{CONTACT}}</p>
+            </div>
+        </div>
+    </section>
+</body>
+</html>
+

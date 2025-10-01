@@ -1,0 +1,731 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Proposta Comercial Factorial RH - DL Contabilidade</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <style>
+        body {
+            font-family: 'Fira Sans', sans-serif;
+            line-height: 1.6;
+            margin: 0;
+            padding: 20px;
+            background-color: #f8f9fa;
+            color: #25253D;
+        }
+        
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            background: white;
+            padding: 40px;
+            border-radius: 10px;
+            box-shadow: 0 0 20px rgba(0,0,0,0.1);
+        }
+        
+        h1 {
+            color: #25253D;
+            text-align: center;
+            border-bottom: 3px solid #07A2AD;
+            padding-bottom: 20px;
+            margin-bottom: 30px;
+        }
+        
+        h2 {
+            color: #25253D;
+            border-left: 4px solid #07A2AD;
+            padding-left: 15px;
+            margin-top: 30px;
+        }
+        
+        h3 {
+            color: #25253D;
+            margin-top: 25px;
+        }
+        
+        .proposal-header {
+            background: linear-gradient(135deg, #07A2AD, #25253D);
+            color: white;
+            padding: 30px;
+            border-radius: 10px;
+            margin-bottom: 30px;
+            text-align: center;
+        }
+        
+        .proposal-header h1 {
+            color: white;
+            border: none;
+            margin: 0;
+        }
+        
+        .proposal-header p {
+            font-size: 1.2em;
+            margin: 10px 0 0 0;
+            opacity: 0.9;
+        }
+        
+        .pricing-card {
+            background: linear-gradient(135deg, #f8f9fa, #e9ecef);
+            border: 2px solid #dee2e6;
+            border-radius: 15px;
+            padding: 30px;
+            margin: 20px 0;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            position: relative;
+            overflow: hidden;
+        }
+        
+        .pricing-card::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            right: 0;
+            height: 4px;
+            background: linear-gradient(90deg, #07A2AD, #FFB940, #FF9153);
+        }
+        
+        .plan-name {
+            font-size: 2em;
+            font-weight: bold;
+            color: #25253D;
+            margin-bottom: 10px;
+        }
+        
+        .plan-price {
+            font-size: 3em;
+            font-weight: bold;
+            color: #07A2AD;
+            margin: 20px 0;
+        }
+        
+        .plan-details {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 20px;
+            margin: 20px 0;
+        }
+        
+        .detail-item {
+            background: white;
+            padding: 15px;
+            border-radius: 8px;
+            border-left: 4px solid #07A2AD;
+        }
+        
+        .detail-label {
+            font-weight: bold;
+            color: #25253D;
+            margin-bottom: 5px;
+        }
+        
+        .detail-value {
+            color: #25253D;
+            font-size: 1.1em;
+        }
+        
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin: 20px 0;
+            background: white;
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+            border-radius: 8px;
+            overflow: hidden;
+        }
+        
+        th {
+            background: linear-gradient(135deg, #07A2AD, #25253D);
+            color: white;
+            padding: 15px;
+            text-align: left;
+            font-weight: 600;
+        }
+        
+        td {
+            padding: 12px 15px;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        
+        tr:nth-child(even) {
+            background-color: #f8f9fa;
+        }
+        
+        tr:hover {
+            background-color: #e8f4f8;
+        }
+        
+        .highlight {
+            background: linear-gradient(135deg, #FFF4E6, #FFE8CC);
+            padding: 20px;
+            border-left: 4px solid #FFB940;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .pain-point {
+            background: linear-gradient(135deg, #FFE5E9, #FFD1D8);
+            padding: 20px;
+            border-left: 4px solid #FF355E;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .solution {
+            background: linear-gradient(135deg, #E0F7F8, #C7F0F2);
+            padding: 20px;
+            border-left: 4px solid #07A2AD;
+            border-radius: 5px;
+            margin: 20px 0;
+        }
+        
+        .feature-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .feature-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        
+        .feature-list li:before {
+            content: "✅ ";
+            color: #07A2AD;
+            font-weight: bold;
+        }
+        
+        .pain-list {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .pain-list li {
+            padding: 8px 0;
+            border-bottom: 1px solid #ecf0f1;
+        }
+        
+        .pain-list li:before {
+            content: "❌ ";
+            color: #FF355E;
+            font-weight: bold;
+        }
+        
+        .emoji {
+            font-size: 1.2em;
+        }
+        
+        .total-section {
+            background: linear-gradient(135deg, #07A2AD, #25253D);
+            color: white;
+            padding: 25px;
+            border-radius: 10px;
+            text-align: center;
+            margin: 30px 0;
+        }
+        
+        .total-section h2 {
+            color: white;
+            border: none;
+            margin: 0 0 15px 0;
+        }
+        
+        .total-amount {
+            font-size: 2.5em;
+            font-weight: bold;
+            margin: 10px 0;
+        }
+        
+        .savings-badge {
+            background: #FF9153;
+            color: white;
+            padding: 5px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            display: inline-block;
+            margin: 10px 0;
+        }
+        
+        .timeline {
+            background: #f8f9fa;
+            padding: 20px;
+            border-radius: 8px;
+            border-left: 4px solid #07A2AD;
+        }
+        
+        .timeline-item {
+            display: flex;
+            align-items: center;
+            margin: 15px 0;
+        }
+        
+        .timeline-date {
+            background: #07A2AD;
+            color: white;
+            padding: 8px 15px;
+            border-radius: 20px;
+            font-weight: bold;
+            margin-right: 15px;
+            min-width: 120px;
+            text-align: center;
+        }
+        
+        .timeline-content {
+            flex: 1;
+        }
+        
+        .comparison-table {
+            margin: 30px 0;
+        }
+        
+        .comparison-table th {
+            text-align: center;
+        }
+        
+        .comparison-table .before {
+            background: #FF355E;
+        }
+        
+        .comparison-table .after {
+            background: #07A2AD;
+        }
+        
+        .roi-bullets {
+            list-style: none;
+            padding: 0;
+        }
+        
+        .roi-bullets li {
+            font-size: 1.3em;
+            padding: 15px;
+            margin: 10px 0;
+            background: #E0F7F8;
+            border-left: 5px solid #07A2AD;
+            border-radius: 5px;
+        }
+        
+        .roi-bullets li::before {
+            content: "💡 ";
+            margin-right: 10px;
+        }
+        
+        .faq-item {
+            background: #f8f9fa;
+            padding: 20px;
+            margin: 15px 0;
+            border-radius: 8px;
+            border-left: 4px solid #FFB940;
+        }
+        
+        .faq-question {
+            font-weight: bold;
+            color: #25253D;
+            font-size: 1.2em;
+            margin-bottom: 10px;
+        }
+        
+        /* Responsividade para Mobile */
+        @media screen and (max-width: 768px) {
+            body {
+                padding: 5px;
+            }
+            
+            .container {
+                padding: 15px;
+                border-radius: 5px;
+            }
+            
+            h1 {
+                font-size: 1.3em;
+                word-wrap: break-word;
+            }
+            
+            h2 {
+                font-size: 1.2em;
+                padding-left: 10px;
+            }
+            
+            h3 {
+                font-size: 1em;
+            }
+            
+            .plan-price {
+                font-size: 1.8em;
+            }
+            
+            .total-amount {
+                font-size: 1.5em;
+            }
+            
+            .plan-details {
+                grid-template-columns: 1fr;
+                gap: 10px;
+            }
+            
+            .detail-item {
+                padding: 10px;
+            }
+            
+            table {
+                font-size: 0.75em;
+                display: block;
+                overflow-x: auto;
+                white-space: nowrap;
+                -webkit-overflow-scrolling: touch;
+            }
+            
+            th, td {
+                padding: 6px 8px;
+                min-width: 80px;
+            }
+            
+            th {
+                font-size: 0.85em;
+            }
+            
+            .emoji {
+                font-size: 1em;
+            }
+            
+            .timeline-item {
+                flex-direction: column;
+                align-items: flex-start;
+            }
+            
+            .timeline-date {
+                margin-bottom: 10px;
+                margin-right: 0;
+                font-size: 0.85em;
+                min-width: auto;
+                padding: 6px 12px;
+            }
+            
+            .timeline-content {
+                font-size: 0.9em;
+            }
+            
+            .proposal-header {
+                padding: 15px;
+            }
+            
+            .proposal-header h1 {
+                font-size: 1.2em;
+                line-height: 1.3;
+            }
+            
+            .proposal-header p {
+                font-size: 0.9em;
+            }
+            
+            .pricing-card,
+            .total-section {
+                padding: 15px;
+            }
+            
+            .plan-name {
+                font-size: 1.3em;
+            }
+            
+            .savings-badge {
+                font-size: 0.8em;
+                padding: 4px 8px;
+                display: block;
+                text-align: center;
+            }
+            
+            .highlight,
+            .pain-point,
+            .solution {
+                padding: 15px;
+                font-size: 0.9em;
+            }
+            
+            ul, ol {
+                padding-left: 20px;
+            }
+            
+            .feature-list li,
+            .pain-list li {
+                font-size: 0.9em;
+                padding: 6px 0;
+            }
+        }
+        
+        @media screen and (min-width: 769px) and (max-width: 1024px) {
+            .container {
+                padding: 30px;
+            }
+            
+            .plan-details {
+                gap: 15px;
+            }
+        }
+        
+        @media print {
+            body {
+                background: white;
+            }
+            .container {
+                box-shadow: none;
+                padding: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- HEADER (MANTER INTACTO) -->
+        <div class="proposal-header">
+            <h1>📊 PROPOSTA COMERCIAL FACTORIAL - DL CONTABILIDADE</h1>
+            <p>Solução Completa de Assinatura Digital e Gestão de Documentos</p>
+        </div>
+
+        <!-- SITUAÇÃO ATUAL (MANTER INTACTO) -->
+        <h2>🎯 Mapeamento do Cenário </h2>
+        
+        <div class="pain-point">
+            <h3>❌ Situação Atual </h3>
+            <ul class="pain-list">
+                <li><strong>Espelho de ponto sem assinatura digital:</strong> Sistema atual gera PDF mas não permite assinatura eletrônica</li>
+                <li><strong>Processo manual trabalhoso:</strong> Escanear → Enviar para gestor → Gestor assina → Devolve por e-mail</li>
+                <li><strong>E-mails que não chegam:</strong> Documentos extraviados na comunicação</li>
+                <li><strong>Dependência do gestor:</strong> Gestor/gerente da loja precisa intermediar o processo</li>
+                <li><strong>600 colaboradores:</strong> Volume alto de documentos mensais sem controle multi-filiais</li>
+            </ul>
+        </div>
+
+        <!-- SOLUÇÃO FACTORIAL (MANTER INTACTO) -->
+        <div class="solution">
+            <h3>✅ Com a Factorial - O Que Você Ganha?</h3>
+            <ul class="feature-list">
+                <li><strong>Upload de PDF único:</strong> Sobe arquivo com 600 páginas e o sistema divide automaticamente por CPF/Nome</li>
+                <li><strong>Assinatura eletrônica legal:</strong> Validade jurídica com rastreabilidade completa</li>
+                <li><strong>Notificação automática:</strong> Colaborador recebe no app/e-mail para assinar</li>
+                <li><strong>Assinatura mobile simplificada:</strong> 2 cliques + desenho da assinatura com o dedo</li>
+                <li><strong>Relação direta com colaborador:</strong> Elimina intermediários e gestores</li>
+                <li><strong>Controle total:</strong> Filtros por status (assinado, pendente, erro), por filial/CNPJ</li>
+            </ul>
+        </div>
+        
+        <!-- FLUXO PASSO-A-PASSO (MANTER INTACTO) -->
+        <h2>📦 COMO FUNCIONA NA PRÁTICA</h2>
+
+        <h3>🔄 Fluxo Completo de Assinatura de Espelho de Ponto e Holerites</h3>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">PASSO 1</div>
+                <div class="timeline-content">
+                    <strong>📤 Upload do PDF Único</strong><br>
+                    <em>Você faz upload do PDF com 600 páginas (espelho de ponto de todos os colaboradores)</em>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">PASSO 2</div>
+                <div class="timeline-content">
+                    <strong>🤖 Sistema Divide Automaticamente</strong><br>
+                    <em>Factorial identifica CPF, nome e sobrenome e separa por colaborador</em>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">PASSO 3</div>
+                <div class="timeline-content">
+                    <strong>📱 Notificação Automática</strong><br>
+                    <em>Cada colaborador recebe notificação no app para assinar seu documento</em>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">PASSO 4</div>
+                <div class="timeline-content">
+                    <strong>✍️ Assinatura Simples</strong><br>
+                    <em>2 cliques (aceite de termos) + desenho da assinatura com o dedo</em>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">PASSO 5</div>
+                <div class="timeline-content">
+                    <strong>✅ Armazenamento Seguro</strong><br>
+                    <em>Documento assinado vai para pasta personalizada do colaborador</em>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">PASSO 6</div>
+                <div class="timeline-content">
+                    <strong>📊 Controle e Filtros</strong><br>
+                    <em>Você filtra por status (assinado/pendente), por filial, por CNPJ</em>
+                </div>
+            </div>
+        </div>
+		
+		<!-- PLANO COMERCIAL (MANTER INTACTO) -->
+        <h2>💰 DETALHAMENTO DA PROPOSTA COMERCIAL</h2>
+
+        <div class="pricing-card">
+            <div class="plan-name">📄 PLANO DOCUMENTOS + ASSINATURA DIGITAL</div>
+            <div class="plan-price">R$ 9,00</div>
+            <p style="text-align: left; font-size: 1.2em; color: #7f8c8d; margin: 0;">por colaborador/mês</p>
+            
+            <div class="plan-details">
+                <div class="detail-item">
+                    <div class="detail-label">👥 Quantidade de Colaboradores</div>
+                    <div class="detail-value">600 usuários</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">💰 Investimento Mensal</div>
+                    <div class="detail-value">R$ 5.400,00</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">📄 Documentos Ilimitados</div>
+                    <div class="detail-value">Sem limite de upload</div>
+                </div>
+                <div class="detail-item">
+                    <div class="detail-label">✍️ Assinaturas Ilimitadas</div>
+                    <div class="detail-value">Sem limite de assinaturas</div>
+                </div>
+            </div>
+            
+            <div class="savings-badge">
+                🎁 Desconto disponível para Outubro!
+            </div>
+        </div>
+      
+
+        <!-- FUNCIONALIDADES BÔNUS (MANTER INTACTO - JÁ LINDO) -->
+        <h2>💡 OUTRAS FUNCIONALIDADES INCLUÍDAS (BÔNUS)</h2>
+        <div class="highlight">
+            <p>Além da assinatura de espelho de ponto, você também pode usar para:</p>
+            <ul class="feature-list">
+                <li><strong>Holerites:</strong> Distribuição automática com assinatura</li>
+                <li><strong>Documentos Admissionais:</strong> Onboarding digital completo</li>
+                <li><strong>Atestados Médicos:</strong> Colaborador faz upload direto no sistema</li>
+                <li><strong>Avisos e Comunicados:</strong> Envio com confirmação de leitura</li>
+                <li><strong>Contratos e Termos:</strong> Qualquer documento que precise de assinatura</li>
+                <li><strong>Portal do Colaborador:</strong> Acessa todos documentos a qualquer momento</li>
+            </ul>
+        </div>
+
+        <!-- CRONOGRAMA (MANTER INTACTO - JÁ LINDO) -->
+        <h2>📅 CRONOGRAMA DE IMPLEMENTAÇÃO</h2>
+        <div class="timeline">
+            <div class="timeline-item">
+                <div class="timeline-date">Semana 1 e 2</div>
+                <div class="timeline-content">
+                    <strong>📋 Cadastro + Filiais</strong><br>
+                    <em>Upload dos dados massivos dos 600 colaboradores e cadastro de todos os CNPJs</em>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Semana 3</div>
+                <div class="timeline-content">
+                    <strong>📁 Configuração + Treinamento</strong><br>
+                    <em>Criação de pastas personalizadas e treinamento da equipe RH</em>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Semana 4</div>
+                <div class="timeline-content">
+                    <strong>🧪 Teste Piloto</strong><br>
+                    <em>Validação com 50-100 colaboradores antes do roll-out completo</em>
+                </div>
+            </div>
+            <div class="timeline-item">
+                <div class="timeline-date">Semana 5</div>
+                <div class="timeline-content">
+                    <strong>🚀 Go-Live Completo</strong><br>
+                    <em>Ativação para todos os 600 colaboradores</em>
+                </div>
+            </div>
+        </div>
+
+        <!-- DIFERENCIAIS (ENXUGADO: 5 LINHAS) -->
+                <!-- SEGURANÇA (ENXUGADO: 3 BULLETS) -->
+        <h2>🔒 SEGURANÇA E COMPLIANCE</h2>
+        <div class="solution">
+            <ul class="feature-list">
+                <li><strong>LGPD garantido:</strong> Dados criptografados e conformidade total com Lei Geral de Proteção de Dados</li>
+                <li><strong>Validade jurídica:</strong> Assinatura eletrônica com validade legal (MP 2.200-2 e Lei 14.063/2020)</li>
+                <li><strong>Auditoria completa:</strong> Rastro de IP, data/hora e geolocalização de cada assinatura</li>
+            </ul>
+        </div>
+
+        <!-- FAQ (ENXUGADO: 3 PERGUNTAS) -->
+        <h2>💬 RESPONDENDO SUAS PRINCIPAIS DÚVIDAS</h2>
+        
+        <div class="faq-item">
+            <div class="faq-question">💰 "R$ 5.400/mês é um investimento alto. Como justificar?"</div>
+            <p><strong>Resposta:</strong> O investimento se paga pela economia de tempo e redução de riscos:</p>
+            <ul class="feature-list">
+                <li>Economia de 56,5 horas/mês da equipe RH e 1 hora por mês/colaborador (valor estimado: R$ 11.825/mês)</li>
+                <li>Eliminação de risco jurídico (1 processo trabalhista = R$ 10.000+)</li>
+                <li>Conformidade com LGPD (multas podem chegar a R$ 50 milhões)</li>
+                <li>Desconto disponível para empresa de grande porte (600 colaboradores)</li>
+            </ul>
+            <p><strong>Resultado: ROI positivo já no primeiro ano!</strong></p>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">📋 "O sistema atual já tem holerite. Por que mudar?"</div>
+            <p><strong>Resposta:</strong> Você mencionou que o sistema atual é "trabalhoso". Com a Factorial RH:</p>
+            <ul class="feature-list">
+                <li>Mesmo processo para holerite E espelho de ponto (padronização)</li>
+                <li>Upload único de 600 páginas, divisão automática</li>
+                <li>Pode manter seu sistema atual e usar Factorial apenas para assinatura</li>
+                <li>Ou migrar tudo e ter gestão completa em um só lugar</li>
+            </ul>
+        </div>
+
+        <div class="faq-item">
+            <div class="faq-question">🏢 "Tenho várias filiais. Como funciona?"</div>
+            <p><strong>Resposta:</strong> Gestão multi-filiais é nativa no Factorial:</p>
+            <ul class="feature-list">
+                <li>Cadastro de todos os CNPJs no sistema</li>
+                <li>Filtro por CNPJ/filial para ver status de assinaturas</li>
+                <li>Relatórios consolidados ou por filial</li>
+                <li>Gestão centralizada, controle descentralizado (se preferir)</li>
+            </ul>
+        </div>
+
+        <!-- PRÓXIMOS PASSOS + SUPORTE (ENXUGADO: 2 LINHAS) -->
+        <h2>📞 PRÓXIMOS PASSOS</h2>
+        <ol>
+            <li><strong>Conhecer outras plataformas</strong> - Você mencionou que vai comparar o mercado (recomendamos!)</li>
+            <li><strong>Testar a plataforma</strong> - Podemos liberar acesso de teste para você explorar</li>
+            <li><strong>Agendar nova reunião</strong> - Dia 9 ou 10 de Outubro para esclarecer dúvidas</li>
+            <li><strong>Definir investimento final</strong> - Negociação e assinatura</li>
+        </ol>
+
+        <h3>📚 Suporte e Garantias</h3>
+        <table>
+            <thead>
+                <tr>
+                    <th>Benefício</th>
+                    <th>Detalhes</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr>
+                    <td><span class="emoji">🆘</span> Suporte técnico em PT-BR</td>
+                    <td>Atendimento dedicado em português, horário comercial</td>
+                </tr>
+                <tr>
+                    <td><span class="emoji">🎓</span> Treinamento incluído</td>
+                    <td>Treinamento completo da equipe de RH sem custo adicional</td>
+                </tr>
+            </tbody>
+        </table>
+
+        <!-- RODAPÉ + PROVA SOCIAL (MANTER INTACTO) -->
+        <hr>
+        <p style="text-align: center; color: #7f8c8d; font-size: 0.9em;">
+            <em>Proposta comercial personalizada para DL Contabilidade</em><br>
+            <em>Contato: Victor Gutierrez - Especialista Factorial</em><br>
+            <em>Data de elaboração: 01/10/2025</em><br>
+            <em>Próximo contato: Dia 9 ou 10 de Outubro</em><br>
+            <em>💡 "De cara eu já gostei, a facilidade tá nítida. Agora é só questão de negociação." - Leandro</em>
+        </p>
+    </div>
+</body>
+</html>
+
