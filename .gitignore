@@ -1,0 +1,25 @@
+# Arquivos de sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Arquivos temporários
+*.tmp
+*.temp
+~*
+
+# Arquivos de texto/anotações internas
+*.txt
+!README.txt
+
+# Arquivos de template (não enviar)
+00_README.md
+01_TEMPLATE_ANALISE_CLIENTE.txt
+02_CALCULADORA_ROI.txt
+03_GUIA_CRIACAO_PROPOSTA.md
+05_EXEMPLOS_SECOES.md
+06_MCP_GUIA_USO.md
+
+# Template base
+04_TEMPLATE_HTML_PROPOSTA.html
+
