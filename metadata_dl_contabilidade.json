@@ -1,0 +1,46 @@
+{
+  "client_name": "DL Contabilidade",
+  "date": "2025-10-01",
+  "num_colaboradores": 600,
+  "price_per_user": 9.00,
+  "total_price": 5400.00,
+  "hours_saved_month": 56.5,
+  "ROI_percent": 52,
+  "contact_name": "Leandro",
+  "next_steps_date": "quinta ou sexta desta semana",
+  "_validation": {
+    "score": "5/5",
+    "percentage": 100,
+    "status": "EXCELENTE",
+    "checks": {
+      "numeric_consistency": "PASS",
+      "roi_plausibility": "PASS",
+      "roi_calculated": "PASS",
+      "cta_present": "PASS",
+      "grammar": "PASS"
+    }
+  },
+  "_assumptions": [
+    "[ASSUMPTION] custo/hora = R$50 usado para estimativa de economia monetária (R$ 2.825/mês)"
+  ],
+  "_changelog": [
+    {
+      "section": "Dor",
+      "before": "8 bullets com dores variadas e algumas redundâncias",
+      "after": "5 bullets consolidados de alto impacto",
+      "reason": "Regra: EXATOS 5 bullets de dor"
+    },
+    {
+      "section": "ROI",
+      "before": "Tabela detalhada com 5 processos e cálculos intermediários (40h→8h, 16h→2h, etc)",
+      "after": "56,5h economizadas/mês | ROI: 52%",
+      "reason": "Regra: Eliminar cálculos detalhados, manter apenas resumo"
+    },
+    {
+      "section": "Segurança",
+      "before": "7 bullets (LGPD, CLT, Auditoria, Backup, Uptime 99.9%, ISO 27001, SOC 2)",
+      "after": "3 bullets (LGPD garantido | Validade jurídica | Auditoria completa)",
+      "reason": "Regra: Reduzir para 3 bullets; detalhes técnicos → anexo"
+    }
+  ]
+}
